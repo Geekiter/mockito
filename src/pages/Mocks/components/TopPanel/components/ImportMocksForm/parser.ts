@@ -9,7 +9,7 @@ const groupSchema = z.object({
 const mockSchema = z.object({
     id: z.string(),
     url: z.string(),
-    urlType: z.enum(['url', 'regexp']),
+    urlType: z.enum(['url', 'regexp', 'contain']),
     httpMethod: z.nativeEnum(HttpMethodType),
     httpStatusCode: z.number(),
     delay: z.number(),

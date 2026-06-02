@@ -25,7 +25,7 @@ export type TMockHeader = {
     value: string;
 };
 
-export type UrlType = 'url' | 'regexp';
+export type UrlType = 'url' | 'regexp' | 'contain';
 
 export type THeader = {
     id: string;

@@ -15,5 +15,9 @@ export const matchUrl = ({ requestUrl, entityUrl, origin, entityUrlType }: Match
         return reqUrl.startsWith(entUrl);
     }
 
+    if (entityUrlType === 'contain') {
+        return reqUrl.includes(entUrl);
+    }
+
     return new RegExp(entityUrl).test(requestUrl);
 };

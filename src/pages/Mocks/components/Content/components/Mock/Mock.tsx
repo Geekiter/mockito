@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { ActionIcon, Group, Switch, Text, Tooltip, useMantineTheme } from '@mantine/core';
+import { ActionIcon, Badge, Group, Switch, Text, Tooltip, useMantineTheme } from '@mantine/core';
 import { IconEdit, IconCopy, IconInfoCircle, IconTrash, IconRegex, IconGripVertical } from '@tabler/icons-react';
 import { draggable, dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
 import {
@@ -115,7 +115,7 @@ export const Mock: FC<MockProps> = ({ mock, isLast, onDelete, onChange, onCopyCl
                         offLabel="OFF"
                         size="xs"
                         checked={mock.isActive}
-                        title="Enable/disable mock"
+                        title="启用/禁用 Mock"
                         onChange={handleChangeStatus}
                     />
 
@@ -138,7 +138,7 @@ export const Mock: FC<MockProps> = ({ mock, isLast, onDelete, onChange, onCopyCl
 
                         {mock.urlType === 'regexp' && (
                             <Tooltip
-                                label="RegExp enabled"
+                                label="正则匹配已启用"
                                 position="bottom"
                                 transitionProps={{ transition: 'scale' }}
                                 openDelay={150}
@@ -149,6 +149,16 @@ export const Mock: FC<MockProps> = ({ mock, isLast, onDelete, onChange, onCopyCl
                                     color="#9775fa"
                                 />
                             </Tooltip>
+                        )}
+
+                        {mock.urlType === 'contain' && (
+                            <Badge
+                                size="xs"
+                                variant="light"
+                                color="green"
+                            >
+                                包含
+                            </Badge>
                         )}
 
                         {mock.comment && (
@@ -187,7 +197,7 @@ export const Mock: FC<MockProps> = ({ mock, isLast, onDelete, onChange, onCopyCl
 
                     <Group gap="0.4rem">
                         <Tooltip
-                            label="Double click to delete"
+                            label="双击删除"
                             position="bottom"
                             transitionProps={{ transition: 'scale-y' }}
                             openDelay={300}
@@ -209,7 +219,7 @@ export const Mock: FC<MockProps> = ({ mock, isLast, onDelete, onChange, onCopyCl
                             color="cyan"
                             size="sm"
                             radius="sm"
-                            title="Clone mock"
+                            title="克隆 Mock"
                             onClick={handleCopy}
                         >
                             <IconCopy size={iconSize} />
@@ -220,7 +230,7 @@ export const Mock: FC<MockProps> = ({ mock, isLast, onDelete, onChange, onCopyCl
                             color="blue"
                             size="sm"
                             radius="sm"
-                            title="Edit mock"
+                            title="编辑 Mock"
                             onClick={handleEditClick}
                         >
                             <IconEdit size={iconSize} />
