@@ -27,7 +27,7 @@ export const AddGroupForm: FC<AddGroupFormProps> = ({ onAdd, groups }) => {
         const unique = isUnique(values.name, groups);
 
         if (!unique) {
-            form.setFieldError('name', 'Group already exists');
+            form.setFieldError('name', '分组已存在');
         } else {
             onAdd({
                 id: nanoid(),
@@ -41,10 +41,10 @@ export const AddGroupForm: FC<AddGroupFormProps> = ({ onAdd, groups }) => {
         <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                 data-autofocus
-                label="Group name"
+                label="分组名称"
                 maxLength={maxLength}
-                placeholder="Mocks for testing authentication"
-                description={`Maximum ${maxLength} symbols`}
+                placeholder="用于测试认证的 Mock"
+                description={`最多 ${maxLength} 个字符`}
                 required
                 size="xs"
                 {...form.getInputProps('name')}
@@ -58,7 +58,7 @@ export const AddGroupForm: FC<AddGroupFormProps> = ({ onAdd, groups }) => {
                     type="submit"
                     size="xs"
                 >
-                    Submit
+                    提交
                 </Button>
             </Group>
         </form>

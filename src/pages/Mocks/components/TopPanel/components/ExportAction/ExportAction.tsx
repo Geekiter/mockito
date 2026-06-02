@@ -30,7 +30,7 @@ export const ExportAction: FC<ExportActionProps> = ({ mocks, groups }) => {
             leftSection={<IconDownload size={iconSize} />}
             onClick={handleDownload}
         >
-            Export mocks
+            导出 Mock
         </Menu.Item>
     );
 };

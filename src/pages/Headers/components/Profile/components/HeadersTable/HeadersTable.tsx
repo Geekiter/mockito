@@ -30,7 +30,7 @@ export const HeadersTable: FC<HeadersTableProps> = ({
     };
 
     if (headers.length === 0) {
-        return <NotFound text="No headers to show" />;
+        return <NotFound text="暂无请求头" />;
     }
 
     const handleDelete = (id: string) => (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -76,13 +76,13 @@ export const HeadersTable: FC<HeadersTableProps> = ({
                                 {header.url ? (
                                     <Text size="xs">{header.url}</Text>
                                 ) : (
-                                    <Text size="xs" c="orange.5">Works for all URL&apos;s</Text>
+                                    <Text size="xs" c="orange.5">匹配所有 URL</Text>
                                 )}
                             </div>
 
                             <Group gap="0.4rem">
                                 <Tooltip
-                                    label="Double click to delete"
+                                    label="双击删除"
                                     position="bottom"
                                     transitionProps={{ transition: 'scale-y' }}
                                     openDelay={300}

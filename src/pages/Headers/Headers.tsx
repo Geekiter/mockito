@@ -82,17 +82,17 @@ const HeadersPage: React.FC = () => {
 
             {profiles !== null && isEmpty(profiles) && (
                 <NotFound
-                    text="No profiles to show"
+                    text="暂无配置文件"
                     action={
                         <Button
                             leftSection={<IconPlaylistAdd size={16} />}
                             variant="gradient"
                             size="compact-xs"
-                            title="Add Profile"
+                            title="新增配置文件"
                             gradient={{ from: 'indigo', to: 'cyan' }}
                             onClick={profileModelActions.open}
                         >
-                            Add Profile
+                            新增配置文件
                         </Button>
                     }
                 />
@@ -111,7 +111,7 @@ const HeadersPage: React.FC = () => {
             <Modal
                 opened={isProfileModelOpen}
                 overlayProps={overlaySettings}
-                title="Add new profile"
+                title="新增配置文件"
                 onClose={profileModelActions.close}
             >
                 <AddProfileForm onSubmit={handleAddProfile} />

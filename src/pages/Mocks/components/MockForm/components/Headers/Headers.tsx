@@ -66,7 +66,7 @@ export const Headers: FC = () => {
                     leftSection={<IconPlaylistAdd size={16} />}
                     onClick={handleAddHeader}
                 >
-                    Add header
+                    \u6dfb\u52a0\u8bf7\u6c42\u5934
                 </Button>
             </div>
         </>

@@ -14,13 +14,13 @@ type ProfileMenuProps = Omit<THeadersProfile, 'headers' | 'lastActive'> & {
 export const ProfileMenu: FC<ProfileMenuProps> = ({ id, name, status, onAdd, onDelete, onChangeStatus }) => {
     const handleDelete = (): void => {
         modals.openConfirmModal({
-            title: `Delete headers profile «${name}»`,
+            title: `删除配置文件《${name}》`,
             children: (
                 <Text size="sm">
-                    Are you sure you want to delete this profile? This action will remove all settings for headers.
+                    确认要删除该配置文件？此操作将移除所有相关请求头设置。
                 </Text>
             ),
-            labels: { confirm: 'Delete', cancel: 'Cancel' },
+            labels: { confirm: '删除', cancel: '取消' },
             confirmProps: { color: 'red', size: 'xs' },
             cancelProps: {
                 size: 'xs',
@@ -61,25 +61,25 @@ export const ProfileMenu: FC<ProfileMenuProps> = ({ id, name, status, onAdd, onD
                     leftSection={<IconUserPlus size={iconSize} />}
                     onClick={onAdd}
                 >
-                    Add new profile
+                    新增配置文件
                 </Menu.Item>
 
                 <Menu.Item
                     leftSection={status === 'enabled' ? <IconUserOff size={iconSize} /> : <IconUser size={iconSize} />}
                     onClick={handleChangeStatus}
                 >
-                    {status === 'enabled' ? 'Disable' : 'Enable'} profile
+                    {status === 'enabled' ? '禁用' : '启用'}配置文件
                 </Menu.Item>
 
                 <Menu.Divider />
 
-                <Menu.Label>Danger zone</Menu.Label>
+                <Menu.Label>危险操作</Menu.Label>
                 <Menu.Item
                     color="red"
                     leftSection={<IconTrash size={14} />}
                     onClick={handleDelete}
                 >
-                    Delete profile
+                    删除配置文件
                 </Menu.Item>
             </Menu.Dropdown>
         </Menu>

@@ -42,7 +42,7 @@ const initialValues: TMock = {
 const maxDelay = 999999;
 const httpMethods = Object.values(HttpMethodType);
 const headerKeyRegexp = /^[a-zA-Z0-9_-]+$/;
-const headerKeyError = 'Only latin letters, numbers and symbols "-" and "_" are available';
+const headerKeyError = '仅支持英文字母、数字及 "-" "_" 符号';
 
 export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
     const [groups] = useStore('mockGroups');
@@ -53,7 +53,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
             id: nanoid(),
         },
         validate: {
-            url: isNotEmpty('Enter URL'),
+            url: isNotEmpty('请输入 URL'),
             responseHeaders: {
                 key: (value) => (!value.match(headerKeyRegexp) ? headerKeyError : null),
             },
@@ -86,7 +86,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                 onSubmit={form.onSubmit(onSubmit)}
             >
                 <Group justify="space-between">
-                    <Text>{mock?.id ? 'Edit mock' : 'Add new mock'}</Text>
+                    <Text>{mock?.id ? '编辑 Mock' : '新增 Mock'}</Text>
 
                     <Group
                         justify="right"
@@ -98,14 +98,14 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                             size="xs"
                             onClick={onClose}
                         >
-                            Cancel
+                            取消
                         </Button>
 
                         <Button
                             type="submit"
                             size="xs"
                         >
-                            Save
+                            保存
                         </Button>
                     </Group>
                 </Group>
@@ -126,7 +126,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                             size="xs"
                             mb="0.3rem"
                         >
-                            Status
+                            状态
                         </Text>
 
                         <SegmentedControl
@@ -136,11 +136,11 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                             value={form.values.isActive ? 'enabled' : 'disabled'}
                             data={[
                                 {
-                                    label: 'Enabled',
+                                    label: '已启用',
                                     value: 'enabled',
                                 },
                                 {
-                                    label: 'Disabled',
+                                    label: '已禁用',
                                     value: 'disabled',
                                 },
                             ]}
@@ -153,7 +153,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                     <Grid.Col span={4}>
                         <Select
                             required
-                            label="Request method"
+                            label="请求方法"
                             data={httpMethods}
                             size="xs"
                             {...form.getInputProps('httpMethod')}
@@ -163,7 +163,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                     <Grid.Col span={4}>
                         <NumberInput
                             required
-                            label="Response status code"
+                            label="响应状态码"
                             min={100}
                             max={599}
                             size="xs"
@@ -173,7 +173,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
 
                     <Grid.Col span={4}>
                         <NumberInput
-                            label="Delay, ms"
+                            label="延迟 (ms)"
                             min={0}
                             max={maxDelay}
                             size="xs"
@@ -183,7 +183,7 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                 </Grid>
 
                 <Select
-                    label="Group"
+                    label="分组"
                     size="xs"
                     data={groupsOptions}
                     searchable
@@ -210,19 +210,19 @@ export const MockForm: FC<MockFormProps> = ({ mock, onClose, onSubmit }) => {
                             value="response"
                             className={styles.tab}
                         >
-                            Response Body
+                            响应体
                         </Tabs.Tab>
                         <Tabs.Tab
                             value="headers"
                             className={styles.tab}
                         >
-                            Response Headers
+                            响应头
                         </Tabs.Tab>
                         <Tabs.Tab
                             value="comments"
                             className={styles.tab}
                         >
-                            Comment
+                            备注
                         </Tabs.Tab>
                     </Tabs.List>
 

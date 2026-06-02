@@ -23,7 +23,7 @@ export const TopPanel: FC<TopPanelProps> = (props) => {
     const handleChangeProfileStatus = (id: string, status: THeaderStatus): void => {
         setProfiles(changeProfileStatus(profiles, id, status));
         showNotification({
-            message: `Profile ${status}`,
+            message: `配置文件已${status === 'enabled' ? '启用' : '禁用'}`,
             color: 'green',
         });
     };
@@ -31,7 +31,7 @@ export const TopPanel: FC<TopPanelProps> = (props) => {
     const handleDeleteProfile = (id: string): void => {
         setProfiles(deleteProfile(profiles, id));
         showNotification({
-            message: 'Profile deleted',
+            message: '配置文件已删除',
             color: 'green',
         });
     };
@@ -58,7 +58,7 @@ export const TopPanel: FC<TopPanelProps> = (props) => {
                         fz="sm"
                         fw={500}
                     >
-                        Request Headers
+                        请求头
                     </Text>
 
                     {activeProfile && (
@@ -76,10 +76,10 @@ export const TopPanel: FC<TopPanelProps> = (props) => {
                     <Button
                         leftSection={<IconPlus size={16} />}
                         size="compact-xs"
-                        title="Add Header"
+                        title="新增请求头"
                         onClick={handleAddHeader}
                     >
-                        Add Header
+                        新增请求头
                     </Button>
 
                     <ProfileMenu

@@ -15,7 +15,7 @@ export const ProfileLabel: FC<ProfileLabelProps> = ({ name, status }) => {
     return (
         <Group
             wrap="nowrap"
-            title={`«${name}» profile is ${status}`}
+            title={`\u914d\u7f6e\u6587\u4ef6\u300a${name}\u300b\u72b6\u6001\uff1a${status === 'enabled' ? '\u5df2\u542f\u7528' : '\u5df2\u7981\u7528'}`}
             gap="0.4rem"
         >
             <Box>{name}</Box>

@@ -47,7 +47,7 @@ export const Logs: React.FC = () => {
                             fz="sm"
                             fw={500}
                         >
-                            Logs
+                            日志
                         </Text>
                         <Badge
                             size="xs"
@@ -66,16 +66,16 @@ export const Logs: React.FC = () => {
                         size="compact-xs"
                         rightSection={<IconTrash size={12} />}
                         color="red"
-                        title={`Clear logs for host ${tabHost}`}
+                        title={`清空 ${tabHost} 的日志`}
                         onClick={handleClearMocks}
                     >
-                        Clear logs
+                        清空日志
                     </Button>
                 )}
             </Header>
 
             {filteredLogs.length === 0 ? (
-                <NotFound text="There are no logs" />
+                <NotFound text="暂无日志" />
             ) : (
                 <div className={styles.logs}>
                     {filteredLogs.map((log) => (

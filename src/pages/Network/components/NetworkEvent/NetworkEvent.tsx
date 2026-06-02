@@ -38,7 +38,7 @@ const NetworkEventComponent: React.FC<NetworkEventProps> = ({ event }) => {
         setMocks([mock, ...(mocks ?? [])]);
 
         showNotification({
-            message: 'Mock was created. See new mock in Response Mocks tab.',
+            message: 'Mock 已创建，请在「响应 Mock」标签页查看。',
             color: 'green',
         });
     };
@@ -84,7 +84,7 @@ const NetworkEventComponent: React.FC<NetworkEventProps> = ({ event }) => {
 
                     <Group gap="0.4rem">
                         <Tooltip
-                            label="Create mock from response"
+                            label="从响应创建 Mock"
                             position="bottom"
                             transitionProps={{ transition: 'scale-y' }}
                             openDelay={300}
@@ -105,7 +105,7 @@ const NetworkEventComponent: React.FC<NetworkEventProps> = ({ event }) => {
 
                 <Collapse in={isOpen}>
                     <Text size="xs">
-                        <strong>Response type:</strong> {event.response.type}
+                        <strong>响应类型：</strong> {event.response.type}
                     </Text>
 
                     {event.response.headers.length > 0 ? (
@@ -115,7 +115,7 @@ const NetworkEventComponent: React.FC<NetworkEventProps> = ({ event }) => {
                                 mt="sm"
                                 fw={700}
                             >
-                                Response headers
+                                响应头
                             </Text>
                             <Code
                                 block
@@ -133,7 +133,7 @@ const NetworkEventComponent: React.FC<NetworkEventProps> = ({ event }) => {
                         </>
                     ) : (
                         <Text size="xs">
-                            <strong>Response headers:</strong> empty
+                            <strong>响应头：</strong>无
                         </Text>
                     )}
 

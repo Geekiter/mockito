@@ -27,27 +27,27 @@ type TMenuItem = {
 const menu: TMenuItem[] = [
     {
         route: 'mocks',
-        name: 'Response Mocks',
+        name: '响应 Mock',
         icon: IconShadow,
     },
     {
         route: 'headers',
-        name: 'Request Headers',
+        name: '请求头',
         icon: IconCodeMinus,
     },
     {
         route: 'network',
-        name: 'Network',
+        name: '网络监控',
         icon: IconWifi,
     },
     {
         route: 'logs',
-        name: 'Logs',
+        name: '日志',
         icon: IconNotebook,
     },
     {
         route: 'settings',
-        name: 'Settings',
+        name: '设置',
         icon: IconSettings2,
     },
 ];
@@ -119,8 +119,8 @@ export const AppNavbar: React.FC<NavbarProps> = ({ onRouteChange, route }) => {
                     <Switch
                         size="lg"
                         color="green"
-                        onLabel="MOCKIATO ENABLED"
-                        offLabel="MOCKIATO DISABLED"
+                        onLabel="已启用"
+                        offLabel="已禁用"
                         radius="sm"
                         checked={isEnabled}
                         onChange={toggleMocking}
@@ -143,7 +143,7 @@ export const AppNavbar: React.FC<NavbarProps> = ({ onRouteChange, route }) => {
                         c="dimmed"
                         size="xs"
                     >
-                        for {tabHost}
+                        当前站点：{tabHost}
                     </Text>
                 </Group>
             </AppShell.Section>
@@ -168,7 +168,7 @@ export const AppNavbar: React.FC<NavbarProps> = ({ onRouteChange, route }) => {
                         c="dimmed"
                         className={styles.link}
                     >
-                        Version {manifest.version}
+                        版本 {manifest.version}
                     </Text>
                 </Group>
 
@@ -190,7 +190,7 @@ export const AppNavbar: React.FC<NavbarProps> = ({ onRouteChange, route }) => {
                         c="dimmed"
                         className={styles.link}
                     >
-                        View source code
+                        查看源码
                     </Text>
                 </Group>
 
@@ -212,7 +212,7 @@ export const AppNavbar: React.FC<NavbarProps> = ({ onRouteChange, route }) => {
                         c="dimmed"
                         className={styles.link}
                     >
-                        Support author
+                        支持作者
                     </Text>
                 </Group>
 
@@ -234,7 +234,7 @@ export const AppNavbar: React.FC<NavbarProps> = ({ onRouteChange, route }) => {
                         c="dimmed"
                         className={styles.link}
                     >
-                        Rate extension
+                        给插件评分
                     </Text>
                 </Group>
             </AppShell.Section>

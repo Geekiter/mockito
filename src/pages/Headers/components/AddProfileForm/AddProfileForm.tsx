@@ -36,17 +36,17 @@ export const AddProfileForm: FC<AddProfileFormProps> = ({ onSubmit }) => {
         <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                 data-autofocus
-                label="Profile name"
+                label="配置文件名称"
                 maxLength={maxLength}
-                placeholder="Development"
-                description={`Maximum ${maxLength} symbols`}
+                placeholder="开发环境"
+                description={`最多 ${maxLength} 个字符`}
                 required
                 size="xs"
                 {...form.getInputProps('name')}
             />
 
             <Group justify="right" mt="md">
-                <Button type="submit" size="xs">Submit</Button>
+                <Button type="submit" size="xs">提交</Button>
             </Group>
         </form>
     );

@@ -36,7 +36,7 @@ export const Network: React.FC = () => {
                         fz="sm"
                         fw={500}
                     >
-                        Network
+                        网络监控
                     </Text>
                     <Badge
                         size="xs"
@@ -49,7 +49,7 @@ export const Network: React.FC = () => {
             }/>
 
             {filteredNetwork.length === 0 ? (
-                <NotFound text="There are no requsts" />
+                <NotFound text="暂无请求记录" />
             ) : (
                 <>
                     <div className={styles.tableHeader}>
@@ -58,14 +58,14 @@ export const Network: React.FC = () => {
                             c="dimmed"
                             className={styles.date}
                         >
-                            Date
+                            时间
                         </Text>
                         <Text
                             size="xs"
                             c="dimmed"
                             className={styles.method}
                         >
-                            Method
+                            方法
                         </Text>
                         <Text
                             size="xs"
@@ -79,7 +79,7 @@ export const Network: React.FC = () => {
                             c="dimmed"
                             className={styles.code}
                         >
-                            Status
+                            状态
                         </Text>
                     </div>
 

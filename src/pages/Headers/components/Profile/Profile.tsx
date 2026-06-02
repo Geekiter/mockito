@@ -45,7 +45,7 @@ export const Profile: FC<ProfileProps> = (props) => {
         onCloseHeaderForm();
 
         showNotification({
-            message: 'Header modification data was saved',
+            message: '\u8bf7\u6c42\u5934\u4fee\u6539\u5df2\u4fdd\u5b58',
             color: 'green',
         });
     };

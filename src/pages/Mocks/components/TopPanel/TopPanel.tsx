@@ -72,7 +72,7 @@ export const TopPanel: FC<TopPanelProps> = ({
                     fz="sm"
                     fw={500}
                 >
-                    Response Mocks
+                    响应 Mock
                 </Text>
             }
         >
@@ -87,17 +87,17 @@ export const TopPanel: FC<TopPanelProps> = ({
                         }
                         onClick={onToggleAllGroups}
                     >
-                        {areAllGroupsExpanded ? 'Collapse All' : 'Expand All'}
+                        {areAllGroupsExpanded ? '全部折叠' : '全部展开'}
                     </Button>
                 )}
 
                 <Button
                     leftSection={<IconPlus size={16} />}
                     size="compact-xs"
-                    title="Add new mock"
+                    title="新增 Mock"
                     onClick={onMockAdd}
                 >
-                    Add Mock
+                    新增 Mock
                 </Button>
 
                 <Menu
@@ -127,20 +127,20 @@ export const TopPanel: FC<TopPanelProps> = ({
                             leftSection={<IconSelectAll size={iconSize} />}
                             onClick={() => {
                                 setModalContentType('newGroup');
-                                setModalTitle('Add new group');
+                                setModalTitle('新增分组');
                             }}
                         >
-                            Add new group
+                            新增分组
                         </Menu.Item>
 
                         <Menu.Item
                             leftSection={<IconUpload size={iconSize} />}
                             onClick={() => {
                                 setModalContentType('import');
-                                setModalTitle('Import mocks');
+                                setModalTitle('导入 Mock');
                             }}
                         >
-                            Import mocks
+                            导入 Mock
                         </Menu.Item>
 
                         <ExportAction

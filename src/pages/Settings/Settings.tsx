@@ -20,9 +20,9 @@ export const Settings = () => {
 
     const handleClearAllLogs = () => {
         modals.openConfirmModal({
-            title: 'Are you sure you want to clear logs?',
-            children: <Text size="sm">All logs for all hosts will be completely removed.</Text>,
-            labels: { confirm: 'Clear logs', cancel: 'Cancel' },
+            title: '确认清空所有日志？',
+            children: <Text size="sm">所有站点的日志将被永久删除。</Text>,
+            labels: { confirm: '清空日志', cancel: '取消' },
             confirmProps: { color: 'red', size: 'xs' },
             cancelProps: {
                 size: 'xs',
@@ -35,9 +35,9 @@ export const Settings = () => {
 
     const handleClearAllMocks = () => {
         modals.openConfirmModal({
-            title: 'Are you sure you want to clear all mocks?',
-            children: <Text size="sm">All mocks will be completely removed.</Text>,
-            labels: { confirm: 'Clear mocks', cancel: 'Cancel' },
+            title: '确认清空所有 Mock？',
+            children: <Text size="sm">所有 Mock 将被永久删除。</Text>,
+            labels: { confirm: '清空 Mock', cancel: '取消' },
             confirmProps: { color: 'red', size: 'xs' },
             cancelProps: {
                 size: 'xs',
@@ -50,9 +50,9 @@ export const Settings = () => {
 
     const handleDeleteProfiles = () => {
         modals.openConfirmModal({
-            title: 'Are you sure you want to remove all headers profiles?',
-            children: <Text size="sm">All headers profiles with headers will be completely removed.</Text>,
-            labels: { confirm: 'Delete', cancel: 'Cancel' },
+            title: '确认删除所有请求头配置？',
+            children: <Text size="sm">所有请求头配置文件及其数据将被永久删除。</Text>,
+            labels: { confirm: '删除', cancel: '取消' },
             confirmProps: { color: 'red', size: 'xs' },
             cancelProps: {
                 size: 'xs',
@@ -65,9 +65,9 @@ export const Settings = () => {
 
     const handleDeleteNetwork = () => {
         modals.openConfirmModal({
-            title: 'Are you sure you want to remove all network logs?',
-            children: <Text size="sm">All network logs will be completely removed.</Text>,
-            labels: { confirm: 'Delete', cancel: 'Cancel' },
+            title: '确认清空所有网络日志？',
+            children: <Text size="sm">所有网络日志将被永久删除。</Text>,
+            labels: { confirm: '删除', cancel: '取消' },
             confirmProps: { color: 'red', size: 'xs' },
             cancelProps: {
                 size: 'xs',
@@ -123,7 +123,7 @@ export const Settings = () => {
                         fz="sm"
                         fw={500}
                     >
-                        Settings
+                        设置
                     </Text>
                 }
             />
@@ -134,13 +134,13 @@ export const Settings = () => {
                         size="sm"
                         fw={500}
                     >
-                        Mocks
+                        Mock 数据
                     </Text>
                     <Text
                         size="xs"
                         c="dimmed"
                     >
-                        All mocks for all hosts
+                        所有站点的 Mock 数据
                     </Text>
 
                     <Button
@@ -152,7 +152,7 @@ export const Settings = () => {
                         disabled={isClearMocksDisabled}
                         onClick={handleClearAllMocks}
                     >
-                        Clear all
+                        清空
                     </Button>
                 </div>
 
@@ -161,13 +161,13 @@ export const Settings = () => {
                         size="sm"
                         fw={500}
                     >
-                        Logs of mocks
+                        Mock 日志
                     </Text>
                     <Text
                         size="xs"
                         c="dimmed"
                     >
-                        Data about requests that were intercepted and replaced with mocks for all hosts
+                        所有站点中被拦截并替换为 Mock 的请求记录
                     </Text>
 
                     <Button
@@ -179,7 +179,7 @@ export const Settings = () => {
                         disabled={isClearLogsDisabled}
                         onClick={handleClearAllLogs}
                     >
-                        Clear all
+                        清空
                     </Button>
                 </div>
 
@@ -188,13 +188,13 @@ export const Settings = () => {
                         size="sm"
                         fw={500}
                     >
-                        Network logs
+                        网络日志
                     </Text>
                     <Text
                         size="xs"
                         c="dimmed"
                     >
-                        Delete all network logs
+                        删除所有网络日志
                     </Text>
 
                     <Button
@@ -206,7 +206,7 @@ export const Settings = () => {
                         disabled={isClearNetworkDisabled}
                         onClick={handleDeleteNetwork}
                     >
-                        Clear all
+                        清空
                     </Button>
                 </div>
 
@@ -215,13 +215,13 @@ export const Settings = () => {
                         size="sm"
                         fw={500}
                     >
-                        Headers profiles
+                        请求头配置文件
                     </Text>
                     <Text
                         size="xs"
                         c="dimmed"
                     >
-                        Header profiles that allow you to substitute headers in requests and responses
+                        可替换请求和响应中请求头的配置文件
                     </Text>
 
                     <Button
@@ -233,7 +233,7 @@ export const Settings = () => {
                         disabled={isHeadersDisabled}
                         onClick={handleDeleteProfiles}
                     >
-                        Clear all
+                        清空
                     </Button>
                 </div>
 
@@ -242,7 +242,7 @@ export const Settings = () => {
                         size="xs"
                         onLabel="ON"
                         offLabel="OFF"
-                        label="Show notifications"
+                        label="显示通知"
                         checked={settings?.showNotifications}
                         onChange={handleToggleNotifications}
                     />
@@ -250,8 +250,7 @@ export const Settings = () => {
                         size="xs"
                         c="dimmed"
                     >
-                        If you enable this setting, notifications about intercepted requests will be shown on the site
-                        page.
+                        启用后，拦截到请求时将在页面上显示通知。
                     </Text>
                 </div>
 
@@ -260,7 +259,7 @@ export const Settings = () => {
                         size="xs"
                         onLabel="ON"
                         offLabel="OFF"
-                        label="Show active status"
+                        label="显示运行状态"
                         checked={settings?.showActiveStatus}
                         onChange={handleToggleActiveStatus}
                     />
@@ -268,8 +267,7 @@ export const Settings = () => {
                         size="xs"
                         c="dimmed"
                     >
-                        If you enable this setting, the page will display mockiato&apos;s running status if it is
-                        enabled.
+                        启用后，页面将显示 Mockiato 的运行状态。
                     </Text>
                 </div>
 
@@ -278,7 +276,7 @@ export const Settings = () => {
                         size="xs"
                         onLabel="ON"
                         offLabel="OFF"
-                        label="Show comments inline"
+                        label="行内显示备注"
                         checked={settings?.commentDisplayMode === 'inline'}
                         onChange={handleToggleCommentDisplayMode}
                     />
@@ -286,7 +284,7 @@ export const Settings = () => {
                         size="xs"
                         c="dimmed"
                     >
-                        Display mock comments as inline text in the mock list instead of a tooltip on hover.
+                        在 Mock 列表中以行内文本显示备注，而不是悬停提示。
                     </Text>
                 </div>
             </Stack>
